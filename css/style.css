@@ -1,0 +1,111 @@
+/*
+
+TODO: 
+
+If there is time left:
+- Redesign in Figma
+- Implement redesign
+- Make it at least usable on other devices beside mobile screens
+
+*/
+
+:root {
+    --white: hsl(0, 0%, 95%);
+    --black: hsl(0, 0%, 15%);
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    background: var(--white);
+    color: var(--black);
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input {
+    margin: 5px;
+    width: 50vw;
+    max-width: 500px;
+}
+
+button {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 2px 20px;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.min-price {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.card p {
+    text-transform: capitalize;
+}
+
+.card-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: var(--black);
+}
+
+.card-modal__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85vw;
+    height: 50vh;
+    background-color: var(--white);
+    padding: 2px 20px;
+}
+
+.modal-content p {
+    max-width: 90%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
