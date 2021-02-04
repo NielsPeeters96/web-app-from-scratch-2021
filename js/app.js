@@ -49,7 +49,7 @@ function getCarrierData (result) {
 		const card = `
 			<p class="carier">${el.Name}</p>
 			<p class="min-price">€</p>
-			<button class="details-btn">Details</button>
+			<button class="details-btn btn">Details</button>
 
 			<div class="card-modal details-modal hidden">
 				<div class="card-modal__content">

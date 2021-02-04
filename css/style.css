@@ -12,6 +12,7 @@ If there is time left:
 :root {
     --white: hsl(0, 0%, 95%);
     --black: hsl(0, 0%, 15%);
+    --blue: hsl(209, 100%, 50%);
 }
 
 body {
@@ -28,10 +29,28 @@ h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 input {
     margin: 5px;
     width: 50vw;
     max-width: 500px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    border: none;
+    width: 300px;
+    height: 50px;
+    border-radius: 0.5em;
+    text-align: center;
+    font-size: 1.1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input::placeholder {
+    color: var(--black);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input:focus::placeholder {
+    color: transparent;
 }
 
 button {
@@ -64,6 +83,10 @@ form {
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: 20px;
+}
+
+.card:first-of-type {
+    margin-top: 40px;
 }
 
 .min-price {
@@ -106,6 +129,49 @@ form {
     visibility: hidden;
 }
 
+.btn {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.search-btn {
+    margin-top: 1em;
+    height: 50px;
+    width: 300px;
+}
+
 .btn:active {
     transform: scale(0.95);
+}
+
+/*
+===== Tablet breakpoint =====
+*/
+
+@media screen and (min-width: 768px) {
+    input {
+        width: 400px;
+    }
+
+    .search-btn {
+        width: 400px;
+    }
+}
+
+/*
+===== Desktop breakpoint ====
+*/
+@media screen and (min-width: 1200px) {
+    input {
+        width: 750px;
+    }
+
+    .search-btn {
+        width: 500px;
+    }
 }
