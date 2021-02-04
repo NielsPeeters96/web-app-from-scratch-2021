@@ -1,18 +1,10 @@
-/*
-
-TODO: 
-
-If there is time left:
-- Redesign in Figma
-- Implement redesign
-- Make it at least usable on other devices besides mobile devices
-
-*/
-
 :root {
     --white: hsl(0, 0%, 95%);
     --black: hsl(0, 0%, 15%);
     --blue: hsl(209, 100%, 50%);
+
+    --heading-family: 'Potta One', cursive;
+    --body-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -20,15 +12,15 @@ body {
     margin: 0;
     background: var(--white);
     color: var(--black);
+    font-family: var(--body-family);
 }
 
 h1 {
     font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--heading-family);
 }
-
 
 input {
     margin: 5px;
@@ -41,12 +33,12 @@ input {
     border-radius: 0.5em;
     text-align: center;
     font-size: 1.1em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--body-family);
 }
 
 input::placeholder {
     color: var(--black);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--body-family);
 }
 
 input:focus::placeholder {
@@ -150,7 +142,7 @@ form {
 }
 
 /*
-===== Tablet breakpoint =====
+===== TABLET BREAKPOINT =====
 */
 
 @media screen and (min-width: 768px) {
@@ -164,7 +156,7 @@ form {
 }
 
 /*
-===== Desktop breakpoint ====
+===== DESKTOP BREAKPOINT ====
 */
 @media screen and (min-width: 1200px) {
     input {
