@@ -25,10 +25,19 @@ function init () {
 async function getData(url, headers) {
 	const result = await getResults(url, headers);
 
-	if (result.Quotes.length <= 0) {
-		// @TODO Error handling (no flights/ticket available)
+	if (result === undefined) {
+		// @TODO Error handling (wrong location or date in the past)
+		console.log('Wrong location or date in past')
 		return
 	}
+
+	if (result.Quotes.length <= 0) {
+		// @TODO Error handling (no flights/ticket available)
+		console.log('No ticket/flights available')
+		return
+	}
+
+	console.log(result)
 
 	setCarrierData(result);
 	setPriceData(result);
@@ -89,11 +98,20 @@ function setPriceData (result) {
  * @param {String} url
  * @param {Object} headers
  */
-
 async function getResults(url, headers) {
 	return fetch(url, headers)
-	  .then((response) => response.json())
-	  .then((data) => data);
+		.then(function(response) {
+			if (!response.ok) {
+				// @TODO Make difference between 400, 401 & 404
+				throw Error(response.statusText);
+			}
+			
+			return response.json();
+		}).then(function(data) {
+			return data;
+		}).catch(function(error) {
+			console.log(error);
+		});
 }
 
 /**
