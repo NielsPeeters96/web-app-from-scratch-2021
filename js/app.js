@@ -1,5 +1,5 @@
 /**
- * Initialize the app and return the headers, so it can be used in another function
+ * Initialize the app and return the headers, so it can be used in another function.
  */
 function init () {
 	const superSecretApiKey = "567539acfemsh057d2628e235702p1b4c6djsn41e3c8996400"
