@@ -19,8 +19,8 @@ function init () {
 /**
  * Get all the data that the user needs
  * 
- * @param {string} url 
- * @param {object} headers 
+ * @param {String} url 
+ * @param {Object} headers 
  */
 async function getData(url, headers) {
 	const result = await getResults(url, headers);
@@ -30,8 +30,8 @@ async function getData(url, headers) {
 		return
 	}
 
-	getCarrierData(result);
-	getPriceData(result);
+	setCarrierData(result);
+	setPriceData(result);
 
 	setDetailButtonListener();
 }
@@ -39,9 +39,9 @@ async function getData(url, headers) {
 /**
  * Get all the data of the carrier that the user needs
  * 
- * @param {object} result 
+ * @param {Object} result 
  */
-function getCarrierData (result) {
+function setCarrierData (result) {
 	result.Carriers.forEach(el => {
 		let div = document.createElement('div');
 		div.className = 'card'
@@ -70,9 +70,9 @@ function getCarrierData (result) {
 /**
  * Get all the data of the price that the user needs
  * 
- * @param {object} result 
+ * @param {Object} result 
  */
-function getPriceData (result) {
+function setPriceData (result) {
 	result.Quotes.forEach((el, i) => {
 		const minPrice = document.querySelectorAll('.min-price');
 		const modalMinPrice = document.querySelectorAll('.modal-price');
@@ -86,8 +86,8 @@ function getPriceData (result) {
 /**
  * Returns an object with all the data that is fetched by the API
  * 
- * @param {string} url
- * @param {object} headers
+ * @param {String} url
+ * @param {Object} headers
  */
 
 async function getResults(url, headers) {
@@ -102,9 +102,9 @@ async function getResults(url, headers) {
  * All those parameters are required.
  * Can be dynamic, based on user input, in the future.
  * 
- * @param {string} departure 
- * @param {string} destination 
- * @param {string} date 
+ * @param {String} departure 
+ * @param {String} destination 
+ * @param {String} date 
  */
 function setParameters (departure, destination, date) {
 	const country = 'NL';
@@ -120,7 +120,7 @@ function setParameters (departure, destination, date) {
 /**
  * Set all the event listeners
  * 
- * @param {object} headers 
+ * @param {Object} headers 
  */
 function setEventListeners(headers) {
 	const searchBtn = document.getElementById('search-btn');
