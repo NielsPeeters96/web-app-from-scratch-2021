@@ -1,5 +1,5 @@
 /**
- * Initialize the app and return the headers, so it can be used in another function.
+ * Initialize the app
  */
 function init () {
 	const superSecretApiKey = "567539acfemsh057d2628e235702p1b4c6djsn41e3c8996400"
@@ -37,8 +37,6 @@ async function getData(url, headers) {
 		return
 	}
 
-	console.log(result)
-
 	setCarrierData(result);
 	setPriceData(result);
 
@@ -55,6 +53,7 @@ function setCarrierData (result) {
 		let div = document.createElement('div');
 		div.className = 'card'
 
+		// @TODO One (dynamic) modal instead of a modal for every card
 		const card = `
 			<p class="carier">${el.Name}</p>
 			<p class="min-price">€</p>
@@ -114,6 +113,45 @@ async function getResults(url, headers) {
 		});
 }
 
+async function convertLocations(fromInput, toInput, date, headers) {
+	// Create array with the locations
+	let locationArr = []
+	locationArr.push(fromInput)
+	locationArr.push(toInput)
+
+	const convertedLocationArr = [];
+
+	// Convert the input for each item in the array
+	for (loc of locationArr) {
+		setConvertParams(loc)
+
+		const convertedResult = await getResults(url, headers);
+
+		convertedLocationArr.push(convertedResult);
+	}
+
+	const fromInputPlaceID = convertedLocationArr[0].Places[0].PlaceId
+	const toInputPlaceID = convertedLocationArr[1].Places[0].PlaceId
+
+	// Call the endpoint with the converted places to show the data
+	setParameters(fromInputPlaceID, toInputPlaceID, date)
+
+	// Get the data with the converted values
+	getData(url, headers);
+
+	// Empty the array
+	locacationArr = []
+}
+
+function setConvertParams(input) {
+	const country = 'NL';
+	const currency = 'EUR';
+	const locale = 'nl-NL';
+	const apiURL = 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices'
+
+	return url = `${apiURL}/autosuggest/v1.0/${country}/${currency}/${locale}/?query=${input}`
+}
+
 /**
  * Returns the final url that will be fetched
  * 
@@ -132,7 +170,10 @@ function setParameters (departure, destination, date) {
 	let destinationAirportCode = destination
 	const departureDate = date;
 
-	return url = `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${country}/${currency}/${locale}/${departureAirportCode}-sky/${destinationAirportCode}-sky/${departureDate}`;
+	const apiURL = 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices'
+
+	// Browse quotes
+	return url = `${apiURL}/browsequotes/v1.0/${country}/${currency}/${locale}/${departureAirportCode}/${destinationAirportCode}/${departureDate}`;
 }
 
 /**
@@ -144,12 +185,9 @@ function setEventListeners(headers) {
 	const searchBtn = document.getElementById('search-btn');
 
 	searchBtn.addEventListener('click', () => {
-		const departureLocation = document.getElementById('departureLocation').value;
-		const destinationLocation = document.getElementById('destinationLocation').value;
+		const fromInputValue = document.getElementById('departureLocation').value;
+		const toInputValue = document.getElementById('destinationLocation').value;
 		const departureDate = document.getElementById('departureDate').value;
-	
-		// @TODO Also accept requests like Amsterdam or Stockholm
-		// Only accepts/understands AMS & ARN, right now
 	
 		const cards = document.querySelectorAll('.card');
 	
@@ -162,9 +200,7 @@ function setEventListeners(headers) {
 			return
 		}
 	
-		setParameters(departureLocation, destinationLocation, departureDate);
-	
-		getData(url, headers);
+		convertLocations(fromInputValue, toInputValue, departureDate, headers)
 	});
 }
 
