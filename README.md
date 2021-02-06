@@ -8,7 +8,7 @@ Basically what it does.. Probably including the design etc. Will be added later 
 https://jochemvogel.github.io/web-app-from-scratch-2021/
 
 ##  🧐 Usage
-Right now it is only possible to search with a so called "International Air Transport Association airport code" (like AMS, JFK & LHR)
+Search for a location and click on search. Very straightforward.
   
 ##  ⚙️ Installation
 How to get the API-key etc. Will be added later ⏰
