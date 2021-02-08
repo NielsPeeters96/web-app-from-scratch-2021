@@ -91,12 +91,6 @@ form {
     margin-top: 40px;
 }
 
-.min-price {
-    margin-top: 0;
-    font-weight: bold;
-    font-size: 24px;
-}
-
 .card p {
     text-transform: capitalize;
 }
@@ -121,10 +115,27 @@ form {
     height: 50vh;
     background-color: var(--white);
     padding: 2px 20px;
+    position: relative
 }
 
-.modal-content p {
+.card-modal__content p {
     max-width: 90%;
+}
+
+.card-modal__min-price {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.card-modal__close {
+    color: var(--black);
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 5em;
+    text-decoration: none;
 }
 
 .hidden {

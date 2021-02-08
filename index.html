@@ -8,29 +8,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="https://cdn.iconscout.com/icon/free/png-256/world-airplane-2221422-1847977.png"/>
-    <script src="js/app.js" type="module"></script>
 </head>
 <body>
     <div class="container">
         <h1>erlijn ✈️</h1> 
         
+        <!-- HOME ROUTE -->
         <section data-route="home" >
             <form action="">
-                <input id="fromLocation" type="text" placeholder="From" required>
-                <input id="toLocation" type="text" placeholder="To" required>
-                <input id="departureDate" type="date" required>
+                <input data-form-from type="text" placeholder="From" required>
+                <input data-form-to type="text" placeholder="To" required>
+                <input data-form-date type="date" required>
             </form>
             <button id="search-btn" class="btn search-btn">Search</button>
+
+            <!-- Card container -->
+            <div class="card-container"></div>
+
+            <!-- Details modal -->
+            <div class="card-modal details-modal hidden">
+                <div class="card-modal__content">
+                    <button data-modal-close class="card-modal__close">×</button>
+                    <h1 data-modal-airports></h1>
+                    <h2 data-modal-price class="card-modal__modal-price"></h2>
+                    <small data-modal-airline></small>
+                    <p data-modal-description>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id saepe exercitationem sit, atque consequuntur ea natus officia dolor vero autem!</p>
+                    <button data-modal-btn class="btn">Book</button>
+                </div>
+            </div>
+
         </section>
 
+        <!-- CHECKOUT ROUTE -->
         <section data-route="checkout" aria-hidden="true" hidden>
-            <h2>Checkout page</h2>
+            <div class="checkout__content">
+                <a href="#">&larr; Go Back</a>
+                <h2>Checkout page - Summary </h2>
+                <h3 data-checkout-from>From: </h1>
+                <h3 data-checkout-to>To: </h1>
+                <p data-checkout-date>Leaving: </p>
+                <p data-checkout-price>Price: </p>
+            </div>
         </section>
 
+        <!-- NOT FOUND (404) ROUTE -->
         <section data-route="not-found" aria-hidden="true" hidden>
             <h2>Not found</h2>
             <h3>Create a page for this</h3>
         </section>
+
     </div>
+    <script src="js/app.js" type="module"></script>
 </body>
 </html>

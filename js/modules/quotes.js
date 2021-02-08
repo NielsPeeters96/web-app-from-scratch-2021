@@ -1,5 +1,6 @@
 import { getResults } from './fetch.js'
 import { API_URL } from '../constants/api.js'
+import { setDetailButtonListener  } from './details.js'
 
 export { getQuotesData, setQuotesUrl }
 
@@ -41,23 +42,15 @@ function setCarrierData (result) {
 
 		// @TODO One (dynamic) modal instead of a modal for every card
 		const card = `
-			<p class="carier">${el.Name}</p>
+			<h2 class="carier">${el.Name}</h2>
 			<p class="min-price">€</p>
 			<button class="details-btn btn">Details</button>
 
-			<div class="card-modal details-modal hidden">
-				<div class="card-modal__content">
-					<h1 id="modal-locations">AMS - JFK</h1>
-					<h2 class="modal-price"></h2>
-					<small id="modal-airline">${el.Name}</small>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id saepe exercitationem sit, atque consequuntur ea natus officia dolor vero autem!</p>
-				</div>
-			</div>
 		`
 		div.innerHTML = card;
-		const container = document.querySelector('.container');
+		const cardContainer = document.querySelector('.card-container');
 
-		container.appendChild(div);
+		cardContainer.appendChild(div);
 	})
 }
 
@@ -69,11 +62,9 @@ function setCarrierData (result) {
 function setPriceData (result) {
 	result.Quotes.forEach((el, i) => {
 		const minPrice = document.querySelectorAll('.min-price');
-		const modalMinPrice = document.querySelectorAll('.modal-price');
 
-		const formattedPrice = `€${el.MinPrice},00`;
-		minPrice[i].innerHTML = formattedPrice;
-		modalMinPrice[i].innerHTML = formattedPrice;
+		const formattedPrice = `${el.MinPrice},00`;
+		minPrice[i].innerHTML += formattedPrice;
 	})
 }
 
@@ -96,32 +87,4 @@ function setQuotesUrl (fromLocationCode, toLocationCode, departureDate) {
 
 	// Browse quotes
 	return `${API_URL}/browsequotes/v1.0/${country}/${currency}/${locale}/${fromLocationCode}/${toLocationCode}/${departureDate}`;
-}
-
-/**
- * Set a event listener to the detail button
- * Needs to happen after data is fetched (& the button is created)
- */
-function setDetailButtonListener () {
-	const detailsBtns = document.querySelectorAll('.details-btn');
-
-	detailsBtns.forEach((button, i) => {
-		button.addEventListener('click', () => {
-			const detailsModals = document.querySelectorAll('.details-modal');
-			detailsModals[i].classList.toggle('hidden');
-
-			// Make the modal disappear if you click outside of it
-			// @TODO Make it work (only works once right now)
-			detailsModals.forEach(detailsModal => {
-				detailsModal.addEventListener('click', (e) => {
-					
-					if (e.target !== detailsModal) {
-						return
-					}
-
-					detailsModal.classList.toggle('hidden');
-				})
-			})
-		})
-	})
 }

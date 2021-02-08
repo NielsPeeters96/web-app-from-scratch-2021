@@ -179,9 +179,9 @@ Small side note: It will list all the location that has the query in his name. F
 
 -  [x]  **Let users fill in the location instead of the Airport Code**. More common that you search for `Amsterdam` instead of `AMS`. Make that happen.
 
--  [ ] **Error handling for users.** Give them feedback: are there no flights? Did they miss something? Did they fill in the wrong airport. Maybe the API-key is not working correctly (anymore), and they get an 401. Besides that: JS stops running when there is an error. When that happens, the app stops working (until you reload). Not a good UX imo.
+-  [x] **Make the detail modal dynamic**. It's already dynamic now, but JS is creating a modal for every card, while one modal (that updates based on the data) is enough.
 
--  [ ] **Make the detail modal dynamic**. It's already dynamic now, but JS is creating a modal for every card, while one modal (that updates based on the data) is enough.
+-  [ ] **Error handling for users.** Give them feedback: are there no flights? Did they miss something? Did they fill in the wrong airport. Maybe the API-key is not working correctly (anymore), and they get an 401. Besides that: JS stops running when there is an error. When that happens, the app stops working (until you reload). Not a good UX imo.
 
 -  [ ] **Let the user choose their currency**. It's standard EUR now, but why not make it dynamic.
 
