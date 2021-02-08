@@ -1,6 +1,9 @@
 import { convertLocations } from './modules/places.js'
+import { handleRoutes } from './utils/router/router.js'
 
 function main () {
+	handleRoutes();
+
 	const searchBtn = document.getElementById('search-btn');
 
 	searchBtn.addEventListener('click', () => {
