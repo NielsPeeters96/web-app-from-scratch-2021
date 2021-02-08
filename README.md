@@ -65,33 +65,37 @@ This endpoint is used to fetch user friendly locations like ***Amsterdam*** to l
 #### Output
 
   ```json
-"Places":[
-"0":{
-      "PlaceId":"NL-sky",
-      "PlaceName":"Nederland",
-      "CountryId":"NL-sky",
-      "RegionId":"",
-      "CityId":"-sky",
-      "CountryName":"Nederland"
-   }
- "1":{
-      "PlaceId":"AMS-sky",
-      "PlaceName":"Amsterdam Schiphol",
-      "CountryId":"NL-sky""RegionId":"",
-      "CityId":"AMST-sky",
-      "CountryName":"Nederland"
-   }
-   "2":{
-      "PlaceId":"EIN-sky",
-      "PlaceName":"Eindhoven",
-      "CountryId":"NL-sky",
-      "RegionId":"",
-      "CityId":"EIND-sky",
-      "CountryName":"Nederland"
-   }
- "3, 4, 5, 6, 7, 8, 9":{
- Same for: Rotterdam, Maastricht & Groningen 
-   }
+{
+   "Places":[
+      {
+         "PlaceId":"NL-sky",
+         "PlaceName":"Nederland",
+         "CountryId":"NL-sky",
+         "RegionId":"",
+         "CityId":"-sky",
+         "CountryName":"Nederland"
+      },
+      {
+         "PlaceId":"AMS-sky",
+         "PlaceName":"Amsterdam Schiphol",
+         "CountryId":"NL-sky",
+         "RegionId":"",
+         "CityId":"AMST-sky",
+         "CountryName":"Nederland"
+      },
+      {
+         "PlaceId":"EIN-sky",
+         "PlaceName":"Eindhoven",
+         "CountryId":"NL-sky",
+         "RegionId":"",
+         "CityId":"EIND-sky",
+         "CountryName":"Nederland"
+      },
+      {
+         "3, 4, 5, 6, 7, 8, 9": "Same for: Rotterdam, Maastricht, Groningen etc."
+      }
+   ]
+}
 ```
 
 Small side note: It will list all the location that has the query in his name. For example: all the airports in `Caribisch Nederland` will also be included in the query `Nederland`. Be aware of that. 
@@ -110,40 +114,40 @@ Small side note: It will list all the location that has the query in his name. F
  #### Output
 ```json
 {
-   "Quotes":[
-		0":{
+   "Quotes": [
+      {
          "QuoteId":1,
          "MinPrice":220,
-         "Direct":true",
+         "Direct":true,
          "OutboundLeg":{
             "CarrierIds":[
-				0:851
+               851
             ],
             "OriginId":81727,
             "DestinationId":60987,
             "DepartureDate":"2021-02-10T00:00:00"
-         }
+         },
          "QuoteDateTime":"2021-02-08T08:21:00"
       }
-   ]
-   "Carriers":[
-		0:{
+   ],
+   "Carriers": [
+      {
          "CarrierId":851,
          "Name":"Alaska Airlines"
       }
    ],
    "Places":[
-	   0:{
-	        "Name":"New York John F. Kennedy",
-	        "Type":"Station",
-	        "PlaceId":60987,
-	        "IataCode":"JFK",
-	        "SkyscannerCode":"JFK",
-	        "CityName":"New York",
-	        "CityId":"NYCA",
-	        "CountryName":"United States"
-	        },
-      1:{
+      {
+         "Name":"New York John F. Kennedy",
+         "Type":"Station",
+         "PlaceId":60987,
+         "IataCode":"JFK",
+         "SkyscannerCode":"JFK",
+         "CityName":"New York",
+         "CityId":"NYCA",
+         "CountryName":"United States"
+      },
+      {
          "Name":"San Francisco International",
          "Type":"Station",
          "PlaceId":81727,
@@ -155,15 +159,15 @@ Small side note: It will list all the location that has the query in his name. F
       }
    ],
    "Currencies":[
-	   0: { 
-	   "Code":"USD",
-	   "Symbol":"$",
-	   "ThousandsSeparator":",",
-	   "DecimalSeparator":".",
-	   "SymbolOnLeft":true,
-	   "SpaceBetweenAmountAndSymbol":false,
-	   "RoundingCoefficient":0,
-	   "DecimalDigits":2
+      { 
+         "Code":"USD",
+         "Symbol":"$",
+         "ThousandsSeparator":",",
+         "DecimalSeparator":".",
+         "SymbolOnLeft":true,
+         "SpaceBetweenAmountAndSymbol":false,
+         "RoundingCoefficient":0,
+         "DecimalDigits":2
       }
    ]
 }
