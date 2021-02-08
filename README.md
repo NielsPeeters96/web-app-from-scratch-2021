@@ -1,4 +1,4 @@
-#  ✈️ ERLIJN
+#  ERLIJN
 
 **[Live link](https://jochemvogel.github.io/web-app-from-scratch-2021/)**
 
