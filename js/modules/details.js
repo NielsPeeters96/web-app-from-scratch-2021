@@ -14,10 +14,10 @@ function setDetailButtonListener () {
             const detailsModal = document.querySelector('.details-modal')
             detailsModal.classList.remove('hidden')
             const card = e.target.parentNode
-            const carier = card.childNodes[1].innerHTML
+            const carrier = card.childNodes[1].innerHTML
             const price = card.childNodes[3].innerHTML
 
-            renderDetailsModal(carier, price)
+            renderDetailsModal(carrier, price)
 
             detailsModal.addEventListener('click', (e) => {
 					
@@ -34,10 +34,10 @@ function setDetailButtonListener () {
 /**
  * Renders the details modal
  * 
- * @param {string} carier 
+ * @param {string} carrier 
  * @param {string} price 
  */
-function renderDetailsModal(carier, price) {
+function renderDetailsModal(carrier, price) {
     const airports = document.querySelector('[data-modal-airports]');
     const modalPrice = document.querySelector('[data-modal-price]');
     const modalAirline = document.querySelector('[data-modal-airline]');
@@ -50,7 +50,7 @@ function renderDetailsModal(carier, price) {
     const toAirportCode = localStorage.getItem('toAirportCode')
 
     airports.textContent = `${fromAirportCode} ${toAirportCode}`
-    modalAirline.textContent = carier
+    modalAirline.textContent = carrier
     modalPrice.textContent = price
 
     bookBtn.addEventListener('click', () => {

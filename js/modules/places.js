@@ -1,6 +1,7 @@
 import { getResults } from './fetch.js'
 import { getQuotesData, setQuotesUrl } from './quotes.js'
 import { API_URL } from '../constants/api.js'
+import { addAirportCodesToLocalStorage } from '../utils/helpers/localStorage.js'
 
 export { convertLocations }
 
@@ -66,31 +67,6 @@ function setConvertUrl(input) {
 	
 }
 
-/**
- * Adds the airport codes to localStorage, so they can be used
- * later in the app.
- * 
- * @param {string} fromInputPlaceID - i.e. AMS-sky
- * @param {string} toInputPlaceID - i.e. JFK-sky
- */
-function addAirportCodesToLocalStorage(fromInputPlaceID, toInputPlaceID) {
-    const fromAirportCode = removeSkySuffix(fromInputPlaceID)
-    const toAirportCode = removeSkySuffix(toInputPlaceID)
-
-    /**
-     * Removes the last 4 characters ('-sky') of the string
-     * 
-     * @param {string} placeID 
-     * 
-     * @returns {string} airportCode without '-sky' suffix
-     */
-    function removeSkySuffix (placeID) {
-        return placeID.substr(0, placeID.length - 4)
-    }
-
-    localStorage.setItem('fromAirportCode', fromAirportCode)
-    localStorage.setItem('toAirportCode', toAirportCode)
-}
 
 /**
  * Set the place ID of the inputs

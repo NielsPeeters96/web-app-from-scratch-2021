@@ -42,7 +42,7 @@ function setCarrierData (result) {
 
 		// @TODO One (dynamic) modal instead of a modal for every card
 		const card = `
-			<h2 class="carier">${el.Name}</h2>
+			<h2 class="carrier">${el.Name}</h2>
 			<p class="min-price">€</p>
 			<button class="details-btn btn">Details</button>
 

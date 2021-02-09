@@ -1,6 +1,6 @@
 import { convertLocations } from './modules/places.js'
 import { handleRoutes } from './utils/router/router.js'
-import { clearPrevSearch} from './utils/helpers/localStorage.js'
+import { clearPrevSearch, addSearchToLocalStorage } from './utils/helpers/localStorage.js'
 
 function main () {
 	handleRoutes();
@@ -45,20 +45,6 @@ function main () {
 
 		convertLocations(fromInputValue, toInputValue, dateInputValue)
 	});
-}
-
-/**
- * Adds the input values to local storage, so they can be used
- * later in the app
- * 
- * @param {string} fromInputValue 
- * @param {string} toInputValue 
- * @param {string} dateInputValue 
- */
-function addSearchToLocalStorage(fromInputValue, toInputValue, dateInputValue) {
-	localStorage.setItem('fromInputValue', fromInputValue)
-	localStorage.setItem('toInputValue', toInputValue)
-	localStorage.setItem('dateInputValue', dateInputValue)
 }
 
 main()
