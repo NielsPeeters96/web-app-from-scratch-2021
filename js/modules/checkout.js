@@ -19,3 +19,12 @@ function renderCheckoutPage() {
     checkoutDate.innerHTML = departureDate
     checkoutPrice.innerHTML = finalPrice
 }
+
+/**
+ * TODO:
+ * When a user goes to /#checkout directly (so basically with an empty localstorage)
+ * Update the route and say that they should book something.
+ * With button: search for your next destination/journey
+ * 
+ * Maybe disable the whole route if there is no content/localStorage
+ */

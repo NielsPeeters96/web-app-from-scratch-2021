@@ -10,6 +10,12 @@ function clearPrevSearch() {
 	localStorage.removeItem('fromAirportCode')
 	localStorage.removeItem('toAirportCode')
 	localStorage.removeItem('quotePrice')
+
+    // Remove previous cards
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.remove();
+    })
 }
 
 /**

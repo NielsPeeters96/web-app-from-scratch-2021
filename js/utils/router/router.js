@@ -1,9 +1,12 @@
 import './routie.js'
 
+import { setSearchButtonEventListener } from '../../modules/search.js';
+
 export function handleRoutes() {
     routie({
         '': function() {
             updateUI('home')
+            setSearchButtonEventListener();
         },
         'checkout': function() {
             updateUI('checkout')
