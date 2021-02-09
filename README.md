@@ -44,6 +44,12 @@ For now this is not necessary, because the API key is stored inside the `constan
  
  This projects uses **modules**. Honestly I don't have to say a lot about it, so maybe in the future I'll add some more details about the usage of the project.
 
+ ### Actor Diagram
+
+ ![Actor Diagram](https://github.com/jochemvogel/web-app-from-scratch-2021/blob/master/docs/actor_diagram.jpg)
+
+ ### Interaction Diagram
+
 ##  :package: API Endpoints Structure
 
 
