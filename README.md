@@ -49,6 +49,7 @@ For now this is not necessary, because the API key is stored inside the `constan
  ![Actor Diagram](https://github.com/jochemvogel/web-app-from-scratch-2021/blob/master/docs/actor_diagram.jpg)
 
  ### Interaction Diagram
+  ![Interaction Diagram](https://github.com/jochemvogel/web-app-from-scratch-2021/blob/master/docs/interaction_diagram.jpg)
 
 ##  :package: API Endpoints Structure
 
