@@ -196,5 +196,14 @@ Small side note: It will list all the location that has the query in his name. F
 
 -  [ ] **Improve the details modal**. It's boring right now. Add extra (useful) information and redesign it.
 
--  [ ] **Come up with new ideas and add those in the README**. Ongoing 🙃
+-  [ ] **Come up with new ideas and add those in the backlog**. Ongoing 🙃
 	
+### Backlog
+
+_Nice to have_-ideas. Won't add them in the todo list, because these are not todos, but just some ideas for improving the app.
+
+- [ ] **Let users select their budget.**
+- [ ] **Add a few sights that can be visited in the destination.**
+- [ ] **Autocomplete the location/airports.** This will improve the UX of the user and prevents the user from filling in the wrong location.
+- [ ] **Random city trip within the users' budget.** Just let them fill in a start point and generate a random city trip. Thinking about the details will come later.
+- [ ] **Think about the USP's.** Think about your users. Why would they choose for ERLIJN and not some other comparison app with more features. Deliver more than others do. What is the value proposition?
