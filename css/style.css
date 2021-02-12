@@ -29,7 +29,7 @@ h1 {
 }
 
 input {
-	margin: 5px;
+	margin: 5px 0;
 	width: 50vw;
 	max-width: 500px;
 	box-shadow: 0 2px 2px hsla(var(--black-hsl-values), 0.25);
@@ -40,6 +40,12 @@ input {
 	text-align: center;
 	font-size: 1.1em;
 	font-family: var(--body-family);
+}
+
+input:hover {
+	transition: transform 0.2s;
+	box-shadow: 0 2px 4px hsla(var(--black-hsl-values), 0.25);
+	transform: scale(1.005);
 }
 
 input::placeholder {
@@ -56,6 +62,10 @@ button {
 	font-weight: 700;
 	padding: 2px 20px;
 	text-transform: uppercase;
+}
+
+button:hover {
+	cursor: pointer;
 }
 
 form {
@@ -91,6 +101,12 @@ form {
 	padding: 10px 20px;
 	border-radius: 5px;
 	margin-top: 20px;
+}
+
+.card:hover {
+	transition: transform 0.3s;
+	box-shadow: 3px 3px 6px hsla(var(--black-hsl-values), 0.5);
+	transform: scale(1.02);
 }
 
 .card:first-of-type {
@@ -158,14 +174,20 @@ form {
 	box-shadow: 0 2px 2px hsla(var(--black-hsl-values), 0.25);
 }
 
+.btn:active {
+	transform: scale(0.95);
+}
+
+.btn:hover {
+	transition: transform 0.1s ease-in;
+	box-shadow: 0 3px 5px hsla(var(--black-hsl-values), 0.25);
+	transform: scale(1.02);
+}
+
 .search-btn {
 	margin-top: 1em;
 	height: 50px;
 	width: 300px;
-}
-
-.btn:active {
-	transform: scale(0.95);
 }
 
 /*
