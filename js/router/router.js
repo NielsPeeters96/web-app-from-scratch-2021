@@ -1,6 +1,6 @@
 import './routie.js'
 
-import { setSearchButtonEventListener } from '../../modules/search.js';
+import { setSearchButtonEventListener } from '../modules/search.js';
 
 export function handleRoutes() {
     routie({

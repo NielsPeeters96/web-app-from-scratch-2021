@@ -1,4 +1,4 @@
-import { handleRoutes } from './utils/router/router.js'
+import { handleRoutes } from './router/router.js'
 
 
 function main () {

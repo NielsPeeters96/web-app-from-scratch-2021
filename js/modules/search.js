@@ -1,5 +1,5 @@
 import { convertLocations } from './places.js'
-import { addSearchToLocalStorage, clearPrevSearch } from '../utils/helpers/localStorage.js'
+import { addSearchToLocalStorage, clearPrevSearch } from '../helpers/localStorage.js'
 
 export { setSearchButtonEventListener }
 

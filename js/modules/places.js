@@ -1,7 +1,7 @@
 import { getResults } from './fetch.js'
 import { getQuotesData, setQuotesUrl } from './quotes.js'
 import { API_URL } from '../constants/api.js'
-import { addAirportCodesToLocalStorage } from '../utils/helpers/localStorage.js'
+import { addAirportCodesToLocalStorage } from '../helpers/localStorage.js'
 
 export { convertLocations }
 
