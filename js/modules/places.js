@@ -78,28 +78,47 @@ function setConvertUrl(input) {
  * This won't be needed if you can choose between airports, but that's not
  * possible yet
  *
+ * Same story for the query 'The Netherlands'.
+ * For now 'country queries' will be 'redirected' to the most used airport of that country.
  *
  * @param {Array} convertedLocationArr - Array with all the converted location codes
  *
  * @returns {Array} [fromInputPlaceID, toInputPlaceID]
  */
 function setInputPlaceID(convertedLocationArr) {
-	const fromInputPlaceID = setFromInputPlaceID(convertedLocationArr);
-	const toInputPlaceID = setToInputPlaceID(convertedLocationArr);
+	const fromPlaceIDIsAiport =
+		convertedLocationArr[0].Places[0].PlaceId.length === 7;
+	const toPlaceIDIsAiport =
+		convertedLocationArr[1].Places[0].PlaceId.length === 7;
 
-	function setFromInputPlaceID(convertedLocationArr) {
-		if (convertedLocationArr[0].Places[0].PlaceId.length > 7) {
-			return convertedLocationArr[0].Places[1].PlaceId;
-		} else {
+	const fromInputPlaceID = setFromInputPlaceID(fromPlaceIDIsAiport);
+	const toInputPlaceID = setToInputPlaceID(toPlaceIDIsAiport);
+
+	/**
+	 *
+	 * @param {boolean} fromPlaceIDIsAiport - True if PlaceId is airport, false if not
+	 *
+	 * @returns {string} - The place id of the right airport
+	 */
+	function setFromInputPlaceID(fromPlaceIDIsAiport) {
+		if (fromPlaceIDIsAiport) {
 			return convertedLocationArr[0].Places[0].PlaceId;
+		} else {
+			return convertedLocationArr[0].Places[1].PlaceId;
 		}
 	}
 
-	function setToInputPlaceID(convertedLocationArr) {
-		if (convertedLocationArr[1].Places[0].PlaceId.length > 7) {
-			return convertedLocationArr[1].Places[1].PlaceId;
-		} else {
+	/**
+	 *
+	 * @param {boolean} toPlaceIDIsAiport - True if PlaceId is airport, false if not
+	 *
+	 * @returns {string} - The place id of the right airport
+	 */
+	function setToInputPlaceID(toPlaceIDIsAiport) {
+		if (toPlaceIDIsAiport) {
 			return convertedLocationArr[1].Places[0].PlaceId;
+		} else {
+			return convertedLocationArr[1].Places[1].PlaceId;
 		}
 	}
 

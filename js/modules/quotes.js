@@ -61,9 +61,9 @@ function setCarrierData(result) {
  * @param {Object} result - The fetched data from the quotes endpoint
  */
 function setPriceData(result) {
-	result.Quotes.forEach((el, i) => {
-		const minPrice = document.querySelectorAll('.min-price');
+	const minPrice = document.querySelectorAll('.min-price');
 
+	result.Quotes.forEach((el, i) => {
 		const formattedPrice = `${el.MinPrice},00`;
 		minPrice[i].innerHTML += formattedPrice;
 	});
