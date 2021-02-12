@@ -198,7 +198,7 @@ _outboundpartialdate_: **2021-02-10**
 
 - [ ] **Let the user choose between only direct flights**. Maybe a checkbox and it can also be displayed on the details modal.
 
-- [ ] **Let the user fill the in country instead of city**. Right now that is not possible, because you can't see which airport you're flying from (or to) if you fill in (i.e.) **Netherlands**. The input is stored in the local storage and used throughout the application. Instead of **NL** you want to see **AMS** or **RTM** based on the cheapest flights. Right now the query **Netherlands** 'redirects' to **AMS**. Because of that the user gets at least to know where they're heading to.
+- [ ] **Let the user fill in the country instead of city**. Right now that is not possible, because you can't see which airport you're flying from (or to) if you fill in (i.e.) **Netherlands**. The input is stored in the local storage and used throughout the application. Instead of **NL** you want to see **AMS** or **RTM** based on the cheapest flights. Right now the query **Netherlands** 'redirects' to **AMS**. Because of that the user gets at least to know where they're heading to.
 
 - [ ] **Improve the details modal**. It's boring right now. Add extra (useful) information and redesign it.
 
