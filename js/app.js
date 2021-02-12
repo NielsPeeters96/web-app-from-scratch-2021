@@ -1,8 +1,7 @@
-import { handleRoutes } from './router/router.js'
+import { handleRoutes } from './router/router.js';
 
-
-function main () {
+function main() {
 	handleRoutes();
 }
 
-main()
+main();

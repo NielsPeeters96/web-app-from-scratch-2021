@@ -1,40 +1,36 @@
-import { convertLocations } from './places.js'
-import { addSearchToLocalStorage, clearPrevSearch } from '../helpers/localStorage.js'
+import { convertLocations } from './places.js';
+import {
+	addSearchToLocalStorage,
+	clearPrevSearch,
+} from '../helpers/localStorage.js';
 
-export { setSearchButtonEventListener }
+export { setSearchButtonEventListener };
 
-function setSearchButtonEventListener () {
-    const searchBtn = document.getElementById('search-btn');
+function setSearchButtonEventListener() {
+	const searchBtn = document.getElementById('search-btn');
 
-	searchBtn.addEventListener('click', () => {
+	searchBtn.addEventListener('click', (e) => {
 		const fromInputValue = document.querySelector('[data-form-from]').value;
 		const toInputValue = document.querySelector('[data-form-to]').value;
 		const dateInputValue = document.querySelector('[data-form-date]').value;
 
-		clearPrevSearch()
+		clearPrevSearch();
 
-		addSearchToLocalStorage(fromInputValue, toInputValue, dateInputValue)
+		addSearchToLocalStorage(fromInputValue, toInputValue, dateInputValue);
 
-		// This can also be done with HTML, but this is OK for now
+		// Check whether the fields are empty or not
 		const emptyFromField = fromInputValue.length === 0;
 		const emptyToField = toInputValue.length === 0;
 		const emptyDateField = dateInputValue.length === 0;
 
-		if (emptyFromField) {
-			// @TODO Error handling (no from specified)
-			return
+		if (emptyFromField || emptyToField || emptyDateField) {
+			return;
 		}
 
-		if (emptyToField) {
-			// @TODO Error handling (no to specified)
-			return
-		}
+		// Prevent default after emtpy fields check
+		// Otherwise the (HTML) error handling doesn't work correctly
+		e.preventDefault();
 
-		if (emptyDateField) {
-			// @TODO Error handling (no date specified)
-			return
-		}
-
-		convertLocations(fromInputValue, toInputValue, dateInputValue)
+		convertLocations(fromInputValue, toInputValue, dateInputValue);
 	});
 }
