@@ -32,6 +32,16 @@ async function convertLocations(fromInput, toInput, dateInput) {
 		convertedLocationArr.push(convertedResult);
 	}
 
+	if (convertedLocationArr[0].Places[0] === undefined) {
+		alert("Your from location doesn't exists");
+		return;
+	}
+
+	if (convertedLocationArr[1].Places[0] === undefined) {
+		alert("Your to location doesn't exists");
+		return;
+	}
+
 	// Set the result to new variable
 	const inputPlaceIDs = setInputPlaceID(convertedLocationArr);
 	const fromInputPlaceID = inputPlaceIDs[0];

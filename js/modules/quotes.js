@@ -13,15 +13,12 @@ async function getQuotesData(url) {
 	const result = await getResults(url);
 
 	if (result === undefined) {
-		// @TODO Error handling (wrong location or date in the past)
-		console.log('Wrong location or date in past');
-		alert('The location is wrong or the date is in the past.');
+		alert('You filled in a date in the past.');
 		return;
 	}
 
 	if (result.Quotes.length <= 0) {
-		// @TODO Error handling (no flights/ticket available)
-		console.log('No ticket/flights available');
+		alert('No ticket/flights available');
 		return;
 	}
 
