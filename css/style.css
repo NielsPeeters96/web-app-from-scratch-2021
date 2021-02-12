@@ -3,11 +3,13 @@
 	--black-hsl-values: 0, 0%, 10%;
 	--light-gray-hsl-values: 0, 0%, 95%;
 	--blue-hsl-values: 209, 100%, 50%;
+	--dark-blue-hsl-values: 209, 100%, 30%;
 
 	--white: hsl(var(--white-hsl-values));
 	--black: hsl(var(--black-hsl-values));
 	--light-grey: hsl(var(--light-gray-hsl-values));
 	--blue: hsl(var(--blue-hsl-values));
+	--dark-blue: hsl(var(--dark-blue-hsl-values));
 
 	--heading-family: 'Potta One', cursive;
 	--body-family: 'Raleway', sans-serif;
@@ -49,8 +51,14 @@ input:hover {
 }
 
 input::placeholder {
-	color: var(--black);
+	color: hsla(var(--black-hsl-values), 0.5);
 	font-family: var(--body-family);
+}
+
+input:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px hsl(var(--blue-hsl-values), 0.6);
+	transform: scale(1.01);
 }
 
 input:focus::placeholder {
@@ -152,6 +160,7 @@ form {
 
 .card-modal__close {
 	color: var(--black);
+	background-color: transparent;
 	border: none;
 	position: absolute;
 	top: 0;
@@ -174,14 +183,21 @@ form {
 	box-shadow: 0 2px 2px hsla(var(--black-hsl-values), 0.25);
 }
 
-.btn:active {
-	transform: scale(0.95);
-}
-
 .btn:hover {
 	transition: transform 0.1s ease-in;
 	box-shadow: 0 3px 5px hsla(var(--black-hsl-values), 0.25);
 	transform: scale(1.02);
+}
+
+.btn:active {
+	transform: scale(0.95);
+	box-shadow: none;
+}
+
+.btn:focus {
+	outline: none;
+	transform: scale(1.01);
+	background-color: var(--dark-blue);
 }
 
 .search-btn {
