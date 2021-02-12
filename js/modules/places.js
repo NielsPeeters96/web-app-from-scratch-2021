@@ -64,7 +64,6 @@ function setConvertUrl(input) {
 	const locale = 'nl-NL';
 
     return `${API_URL}/autosuggest/v1.0/${country}/${currency}/${locale}/?query=${input}`
-	
 }
 
 
