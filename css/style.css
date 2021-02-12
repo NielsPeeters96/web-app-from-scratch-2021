@@ -1,191 +1,196 @@
 :root {
-    --white: hsl(0, 0%, 95%);
-    --black: hsl(0, 0%, 15%);
-    --blue: hsl(209, 100%, 50%);
+	--white-hsl-values: 0, 0%, 99%;
+	--black-hsl-values: 0, 0%, 10%;
+	--light-gray-hsl-values: 0, 0%, 95%;
+	--blue-hsl-values: 209, 100%, 50%;
 
-    --heading-family: 'Potta One', cursive;
-    --body-family: 'Raleway', sans-serif;
+	--white: hsl(var(--white-hsl-values));
+	--black: hsl(var(--black-hsl-values));
+	--light-grey: hsl(var(--light-gray-hsl-values));
+	--blue: hsl(var(--blue-hsl-values));
+
+	--heading-family: 'Potta One', cursive;
+	--body-family: 'Raleway', sans-serif;
 }
 
 body {
-    box-sizing: border-box;
-    margin: 0;
-    background: var(--white);
-    color: var(--black);
-    font-family: var(--body-family);
+	box-sizing: border-box;
+	margin: 0;
+	background: var(--light-grey);
+	color: var(--black);
+	font-family: var(--body-family);
 }
 
 h1 {
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    font-family: var(--heading-family);
+	font-size: 40px;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	font-family: var(--heading-family);
 }
 
 input {
-    margin: 5px;
-    width: 50vw;
-    max-width: 500px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-    border: none;
-    width: 300px;
-    height: 50px;
-    border-radius: 0.5em;
-    text-align: center;
-    font-size: 1.1em;
-    font-family: var(--body-family);
+	margin: 5px;
+	width: 50vw;
+	max-width: 500px;
+	box-shadow: 0 2px 2px hsla(var(--black-hsl-values), 0.25);
+	border: none;
+	width: 300px;
+	height: 50px;
+	border-radius: 0.5em;
+	text-align: center;
+	font-size: 1.1em;
+	font-family: var(--body-family);
 }
 
 input::placeholder {
-    color: var(--black);
-    font-family: var(--body-family);
+	color: var(--black);
+	font-family: var(--body-family);
 }
 
 input:focus::placeholder {
-    color: transparent;
+	color: transparent;
 }
 
 button {
-    font-size: 16px;
-    font-weight: 700;
-    padding: 2px 20px;
-    text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 2px 20px;
+	text-transform: uppercase;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .container section {
-    display: none;
+	display: none;
 }
 
 .container section.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(0, 0%, 100%);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    width: 250px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--white);
+	box-shadow: 2px 2px 4px hsla(var(--black-hsl-values), 0.5);
+	width: 250px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-top: 20px;
 }
 
 .card:first-of-type {
-    margin-top: 40px;
+	margin-top: 40px;
 }
 
 .card p {
-    text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .card-modal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    color: var(--black);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	background-color: hsla(var(--black-hsl-values), 0.95);
+	color: var(--black);
 }
 
 .card-modal__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 85vw;
-    height: 50vh;
-    background-color: var(--white);
-    padding: 2px 20px;
-    position: relative
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 85vw;
+	height: 50vh;
+	background-color: var(--light-grey);
+	padding: 2px 20px;
+	position: relative;
 }
 
 .card-modal__content p {
-    max-width: 90%;
+	max-width: 90%;
 }
 
 .card-modal__min-price {
-    margin-top: 0;
-    font-weight: bold;
-    font-size: 24px;
+	margin-top: 0;
+	font-weight: bold;
+	font-size: 24px;
 }
 
 .card-modal__close {
-    color: var(--black);
-    border: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 5em;
-    text-decoration: none;
+	color: var(--black);
+	border: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 5em;
+	text-decoration: none;
 }
 
 .hidden {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .btn {
-    background-color: var(--blue);
-    color: var(--white);
-    border: none;
-    height: 40px;
-    width: 200px;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+	background-color: var(--blue);
+	color: var(--light-grey);
+	border: none;
+	height: 40px;
+	width: 200px;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px hsla(var(--black-hsl-values), 0.25);
 }
 
 .search-btn {
-    margin-top: 1em;
-    height: 50px;
-    width: 300px;
+	margin-top: 1em;
+	height: 50px;
+	width: 300px;
 }
 
 .btn:active {
-    transform: scale(0.95);
+	transform: scale(0.95);
 }
-
 
 /*
 ===== TABLET BREAKPOINT =====
 */
 
 @media screen and (min-width: 768px) {
-    input {
-        width: 400px;
-    }
+	input {
+		width: 400px;
+	}
 
-    .search-btn {
-        width: 400px;
-    }
+	.search-btn {
+		width: 400px;
+	}
 }
 
 /*
 ===== DESKTOP BREAKPOINT ====
 */
 @media screen and (min-width: 1200px) {
-    input {
-        width: 750px;
-    }
+	input {
+		width: 750px;
+	}
 
-    .search-btn {
-        width: 500px;
-    }
+	.search-btn {
+		width: 500px;
+	}
 }
