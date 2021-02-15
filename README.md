@@ -13,7 +13,7 @@ ERLIJN is a search engine for (cheap) flights where you can search and book flig
         <td align="center"><a href="#open_file_folder-folder-structure">🗂 Folder Structure<a></td>
         <td align="center"><a href="#package-api-endpoints-structure">📦 API Structure<a></td>
         <td align="center"><a href="#memo-todo-list">📝 Todo list<a></td>
-    </tr> 
+    </tr>
 </table>
 
 ## :nerd_face: Usage
@@ -78,35 +78,35 @@ _locale_: **nl-NL**
 
 ```json
 {
-	"Places": [
-		{
-			"PlaceId": "NL-sky",
-			"PlaceName": "Nederland",
-			"CountryId": "NL-sky",
-			"RegionId": "",
-			"CityId": "-sky",
-			"CountryName": "Nederland"
-		},
-		{
-			"PlaceId": "AMS-sky",
-			"PlaceName": "Amsterdam Schiphol",
-			"CountryId": "NL-sky",
-			"RegionId": "",
-			"CityId": "AMST-sky",
-			"CountryName": "Nederland"
-		},
-		{
-			"PlaceId": "EIN-sky",
-			"PlaceName": "Eindhoven",
-			"CountryId": "NL-sky",
-			"RegionId": "",
-			"CityId": "EIND-sky",
-			"CountryName": "Nederland"
-		},
-		{
-			"3, 4, 5, 6, 7, 8, 9": "Same for: Rotterdam, Maastricht, Groningen etc."
-		}
-	]
+    "Places": [
+        {
+            "PlaceId": "NL-sky",
+            "PlaceName": "Nederland",
+            "CountryId": "NL-sky",
+            "RegionId": "",
+            "CityId": "-sky",
+            "CountryName": "Nederland"
+        },
+        {
+            "PlaceId": "AMS-sky",
+            "PlaceName": "Amsterdam Schiphol",
+            "CountryId": "NL-sky",
+            "RegionId": "",
+            "CityId": "AMST-sky",
+            "CountryName": "Nederland"
+        },
+        {
+            "PlaceId": "EIN-sky",
+            "PlaceName": "Eindhoven",
+            "CountryId": "NL-sky",
+            "RegionId": "",
+            "CityId": "EIND-sky",
+            "CountryName": "Nederland"
+        },
+        {
+            "3, 4, 5, 6, 7, 8, 9": "Same for: Rotterdam, Maastricht, Groningen etc."
+        }
+    ]
 }
 ```
 
@@ -127,89 +127,89 @@ _outboundpartialdate_: **2021-02-10**
 
 ```json
 {
-	"Quotes": [
-		{
-			"QuoteId": 1,
-			"MinPrice": 220,
-			"Direct": true,
-			"OutboundLeg": {
-				"CarrierIds": [851],
-				"OriginId": 81727,
-				"DestinationId": 60987,
-				"DepartureDate": "2021-02-10T00:00:00"
-			},
-			"QuoteDateTime": "2021-02-08T08:21:00"
-		}
-	],
-	"Carriers": [
-		{
-			"CarrierId": 851,
-			"Name": "Alaska Airlines"
-		}
-	],
-	"Places": [
-		{
-			"Name": "New York John F. Kennedy",
-			"Type": "Station",
-			"PlaceId": 60987,
-			"IataCode": "JFK",
-			"SkyscannerCode": "JFK",
-			"CityName": "New York",
-			"CityId": "NYCA",
-			"CountryName": "United States"
-		},
-		{
-			"Name": "San Francisco International",
-			"Type": "Station",
-			"PlaceId": 81727,
-			"IataCode": "SFO",
-			"SkyscannerCode": "SFO",
-			"CityName": "San Francisco",
-			"CityId": "SFOA",
-			"CountryName": "United States"
-		}
-	],
-	"Currencies": [
-		{
-			"Code": "USD",
-			"Symbol": "$",
-			"ThousandsSeparator": ",",
-			"DecimalSeparator": ".",
-			"SymbolOnLeft": true,
-			"SpaceBetweenAmountAndSymbol": false,
-			"RoundingCoefficient": 0,
-			"DecimalDigits": 2
-		}
-	]
+    "Quotes": [
+        {
+            "QuoteId": 1,
+            "MinPrice": 220,
+            "Direct": true,
+            "OutboundLeg": {
+                "CarrierIds": [851],
+                "OriginId": 81727,
+                "DestinationId": 60987,
+                "DepartureDate": "2021-02-10T00:00:00"
+            },
+            "QuoteDateTime": "2021-02-08T08:21:00"
+        }
+    ],
+    "Carriers": [
+        {
+            "CarrierId": 851,
+            "Name": "Alaska Airlines"
+        }
+    ],
+    "Places": [
+        {
+            "Name": "New York John F. Kennedy",
+            "Type": "Station",
+            "PlaceId": 60987,
+            "IataCode": "JFK",
+            "SkyscannerCode": "JFK",
+            "CityName": "New York",
+            "CityId": "NYCA",
+            "CountryName": "United States"
+        },
+        {
+            "Name": "San Francisco International",
+            "Type": "Station",
+            "PlaceId": 81727,
+            "IataCode": "SFO",
+            "SkyscannerCode": "SFO",
+            "CityName": "San Francisco",
+            "CityId": "SFOA",
+            "CountryName": "United States"
+        }
+    ],
+    "Currencies": [
+        {
+            "Code": "USD",
+            "Symbol": "$",
+            "ThousandsSeparator": ",",
+            "DecimalSeparator": ".",
+            "SymbolOnLeft": true,
+            "SpaceBetweenAmountAndSymbol": false,
+            "RoundingCoefficient": 0,
+            "DecimalDigits": 2
+        }
+    ]
 }
 ```
 
 ## :memo: Todo list
 
-- [x] **Add modules**. Make it more readable.
+-   [x] **Add modules**. Make it more readable.
 
-- [x] **Let users fill in the location instead of the Airport Code**. More common that you search for `Amsterdam` instead of `AMS`. Make that happen.
+-   [x] **Let users fill in the location instead of the Airport Code**. More common that you search for `Amsterdam` instead of `AMS`. Make that happen.
 
-- [x] **Make the detail modal dynamic**. It's already dynamic now, but JS is creating a modal for every card, while one modal (that updates based on the data) is enough.
+-   [x] **Make the detail modal dynamic**. It's already dynamic now, but JS is creating a modal for every card, while one modal (that updates based on the data) is enough.
 
-- [ ] **Error handling for users.** Give them feedback: are there no flights? Did they miss something? Did they fill in the wrong airport. Maybe the API-key is not working correctly (anymore), and they get an 401. Besides that: JS stops running when there is an error. When that happens, the app stops working (until you reload). Not a good UX imo.
+-   [ ] **Error handling for users.** Give them feedback: are there no flights? Did they miss something? Did they fill in the wrong airport. Maybe the API-key is not working correctly (anymore), and they get an 401. Besides that: JS stops running when there is an error. When that happens, the app stops working (until you reload). Not a good UX imo.
 
-- [ ] **Let the user choose their currency**. It's standard EUR now, but why not make it dynamic.
+-   [ ] **Let the user choose their currency**. It's standard EUR now, but why not make it dynamic.
 
-- [ ] **Let the user choose between only direct flights**. Maybe a checkbox and it can also be displayed on the details modal.
+-   [ ] **Let the user choose between only direct flights**. Maybe a checkbox and it can also be displayed on the details modal.
 
-- [ ] **Let the user fill in the country instead of city**. Right now that is not possible, because you can't see which airport you're flying from (or to) if you fill in (i.e.) **Netherlands**. The input is stored in the local storage and used throughout the application. Instead of **NL** you want to see **AMS** or **RTM** based on the cheapest flights. Right now the query **Netherlands** 'redirects' to **AMS**. Because of that the user gets at least to know where they're heading to.
+-   [ ] **Let the user fill in the country instead of city**. Right now that is not possible, because you can't see which airport you're flying from (or to) if you fill in (i.e.) **Netherlands**. The input is stored in the local storage and used throughout the application. Instead of **NL** you want to see **AMS** or **RTM** based on the cheapest flights. Right now the query **Netherlands** 'redirects' to **AMS**. Because of that the user gets at least to know where they're heading to.
 
-- [ ] **Improve the details modal**. It's boring right now. Add extra (useful) information and redesign it.
+-   [ ] **Improve the details modal**. It's boring right now. Add extra (useful) information and redesign it.
 
-- [ ] **Come up with new ideas and add those in the backlog**. Ongoing 🙃
+-   [ ] **Come up with new ideas and add those in the backlog**. Ongoing 🙃
 
 ### Backlog
 
 _Nice to have_-ideas. Won't add them in the todo list, because these are not todos, but just some ideas for improving the app.
 
-- [ ] **Let users select their budget.**
-- [ ] **Add a few sights that can be visited in the destination.**
-- [ ] **Autocomplete the location/airports.** This will improve the UX of the user and prevents the user from filling in the wrong location.
-- [ ] **Random city trip within the users' budget.** Just let them fill in a start point and generate a random city trip. Thinking about the details will come later.
-- [ ] **Think about the USP's.** Think about your users. Why would they choose for ERLIJN and not some other comparison app with more features. Deliver more than others do. What is the value proposition?
+-   [ ] **Let users select their budget.**
+-   [ ] **Add a few sights that can be visited in the destination.**
+-   [ ] **Autocomplete the location/airports.** This will improve the UX of the user and prevents the user from filling in the wrong location.
+-   [ ] **Random city trip within the users' budget.** Just let them fill in a start point and generate a random city trip. Thinking about the details will come later.
+-   [ ] **Think about the USP's.** Think about your users. Why would they choose for ERLIJN and not some other comparison app with more features. Deliver more than others do. What is the value proposition?
