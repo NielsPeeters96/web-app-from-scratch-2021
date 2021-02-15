@@ -192,22 +192,26 @@ _outboundpartialdate_: **2021-02-10**
 
 -   [x] **Make the detail modal dynamic**. It's already dynamic now, but JS is creating a modal for every card, while one modal (that updates based on the data) is enough.
 
--   [ ] **Error handling for users.** Give them feedback: are there no flights? Did they miss something? Did they fill in the wrong airport. Maybe the API-key is not working correctly (anymore), and they get an 401. Besides that: JS stops running when there is an error. When that happens, the app stops working (until you reload). Not a good UX imo.
+-   [x] **Let the user fill in the country instead of city**. Netherlands instead of AMS.
 
--   [ ] **Let the user choose their currency**. It's standard EUR now, but why not make it dynamic.
+-   [ ] **Error handling for users.** Give them feedback: are there no flights? Did they miss something? Did they fill in the wrong airport. Maybe the API-key is not working correctly (anymore), and they get an 401. Besides that: JS stops running when there is an error. When that happens, the app stops working (until you reload). Not a good UX imo.
 
 -   [ ] **Let the user choose between only direct flights**. Maybe a checkbox and it can also be displayed on the details modal.
 
--   [ ] **Let the user fill in the country instead of city**. Right now that is not possible, because you can't see which airport you're flying from (or to) if you fill in (i.e.) **Netherlands**. The input is stored in the local storage and used throughout the application. Instead of **NL** you want to see **AMS** or **RTM** based on the cheapest flights. Right now the query **Netherlands** 'redirects' to **AMS**. Because of that the user gets at least to know where they're heading to.
-
 -   [ ] **Improve the details modal**. It's boring right now. Add extra (useful) information and redesign it.
+
+-   [ ] **Improve the checkout route**. It's boring right now. Add extra (useful) information and redesign it.
+
+-   [ ] **Add template engine**. Never done it before, but sounds cool.
 
 -   [ ] **Come up with new ideas and add those in the backlog**. Ongoing 🙃
 
 ### Backlog
 
-_Nice to have_-ideas. Won't add them in the todo list, because these are not todos, but just some ideas for improving the app.
+_Nice to have_-ideas. Won't add them in the todo list, because these are not todos, but just some ideas for improving the app. This list is chronologically ordered.
 
+-   [ ] **Let the user choose their currency**. It's standard EUR now, but why not make it dynamic.
+-   [ ] **Create loader and implement it on API calls.**
 -   [ ] **Let users select their budget.**
 -   [ ] **Add a few sights that can be visited in the destination.**
 -   [ ] **Autocomplete the location/airports.** This will improve the UX of the user and prevents the user from filling in the wrong location.
